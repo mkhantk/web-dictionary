@@ -9,7 +9,6 @@ function Display() {
       dictionary.sound
     }.mp3`
   );
-  console.log(audio);
 
   function handlePlay() {
     audio.play();

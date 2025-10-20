@@ -47,7 +47,6 @@ export const structureData = async (data) => {
   dictionary.example = await getExample(data[0].meta.id.split(":")[0]);
   dictionary.synonyms = await getSynonyms(data[0].meta.id.split(":")[0]);
 
-  console.log(dictionary);
   return dictionary;
 };
 

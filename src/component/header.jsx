@@ -42,7 +42,6 @@ function Header({ setLoading }) {
     let searchWord = await word.toLocaleLowerCase();
     try {
       const dict = await fetchData(searchWord);
-      console.log("this is the dict", dict);
 
       if (dict.length < 1) throw new Error();
 

@@ -10,9 +10,6 @@ function App() {
   const dictionary = useSelector((state) => state.dictionary.value);
   const font = useSelector((state) => state.font.value);
   const [loading, setLoading] = useState(null);
-  console.log(dictionary);
-  console.log(loading);
-  console.log(font);
 
   return (
     <div

@@ -17,7 +17,7 @@ function Loading({ loading }) {
   if (!show) return null;
   return (
     <div
-      className={`absolute inset-0 z-50 bg-neutral-200 flex justify-center items-start dark:bg-neutral-900 text-center text-gray-900/50 text-base dark:text-gray-200/50 `}
+      className={`absolute inset-0 z-50 bg-neutral-200 flex justify-center items-center dark:bg-neutral-900 text-center text-gray-900/50 text-base dark:text-gray-200/50 `}
     >
       <span className="">loading...</span>
     </div>
