@@ -15,7 +15,7 @@ function App() {
     <div
       className={`${
         theme === "dark" && "dark"
-      } font-${font} min-h-screen w-full bg-neutral-200 text-gray-900 dark:bg-neutral-900 dark:text-gray-100 `}
+      } font-${font} min-h-screen w-full bg-neutral-200 text-gray-900 dark:bg-neutral-900 dark:text-gray-100 md:px-5 lg:w-3/5 2xl:w-2/5  md:mx-auto `}
     >
       <Header setLoading={setLoading} />
       <div className="relative w-full ">

@@ -13,8 +13,10 @@ function Header({ setLoading }) {
   function handleCheck() {
     if (theme === "light") {
       dispatch(changeDark());
+      document.getElementById("root").classList.add("dark");
     } else {
       dispatch(changeLight());
+      document.getElementById("root").classList.remove("dark");
     }
   }
 
