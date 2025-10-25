@@ -32,17 +32,25 @@ export const structureData = async (data) => {
 
   // what to do is to figure out how many hom are there in the dict and them map them to create an array of parof speech adn it's definitions.
   // the best possible outcome would be creating another object in the main object.
-  dictionary.partOfSpeech = await data
-    .filter(
-      (item) =>
-        Object.hasOwn(item, "hom") &&
-        item.meta.id.split(":")[0] === data[0].meta.id.split(":")[0]
-    )
-    .map((item) => ({ pos: item.fl, def: item.shortdef }));
-  // dictionary.partOfSpeech = (await data[0].fl) ? data[0].fl : "unavailable";
-  // dictionary.definitions = (await data[0].shortdef)
-  //   ? data[0].shortdef
-  //   : "unavailable";
+  try {
+    dictionary.partOfSpeech = await data
+      .filter(
+        (item) =>
+          Object.hasOwn(item, "hom") &&
+          item.meta.id.split(":")[0] === data[0].meta.id.split(":")[0]
+      )
+      .map((item) => ({ pos: item.fl, def: item.shortdef }));
+
+    if (dictionary.partOfSpeech.length === 0) throw new Error();
+  } catch {
+    console.log("response has no hom");
+    dictionary.partOfSpeech = await data
+      .filter(
+        (item) => item.meta.id.split(":")[0] === data[0].meta.id.split(":")[0]
+      )
+      .map((item) => ({ pos: item.fl, def: item.shortdef }));
+  }
+  //  there has been cases where no hom but solid response. for that case,
 
   dictionary.example = await getExample(data[0].meta.id.split(":")[0]);
   dictionary.synonyms = await getSynonyms(data[0].meta.id.split(":")[0]);

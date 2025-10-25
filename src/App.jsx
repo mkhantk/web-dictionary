@@ -15,10 +15,10 @@ function App() {
     <div
       className={`${
         theme === "dark" && "dark"
-      } font-${font} min-h-screen w-full bg-neutral-200 text-gray-900 dark:bg-neutral-900 dark:text-gray-100 md:px-5 lg:w-3/5 2xl:w-2/5  md:mx-auto `}
+      } font-${font} min-h-screen w-full flex flex-col bg-neutral-200 text-gray-900 dark:bg-neutral-900 dark:text-gray-100 md:px-5 lg:w-3/5 2xl:w-2/5  md:mx-auto `}
     >
       <Header setLoading={setLoading} />
-      <div className="relative w-full ">
+      <div className="relative w-full grow">
         {loading !== null && <Loading loading={loading} />}
         {dictionary === null ? (
           <span className="inline-block w-full my-20 text-center text-gray-900/50 text-base dark:text-gray-100/50">
@@ -28,6 +28,11 @@ function App() {
           <>{dictionary.word && <Display />}</>
         )}
       </div>
+      <footer className="mt-auto">
+        <p className="text-center text-sm py-2">
+          Built by Min Khant Kyaw — powered by ☕.
+        </p>
+      </footer>
     </div>
   );
 }
