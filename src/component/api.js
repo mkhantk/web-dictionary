@@ -43,7 +43,6 @@ export const structureData = async (data) => {
 
     if (dictionary.partOfSpeech.length === 0) throw new Error();
   } catch {
-    console.log("response has no hom");
     dictionary.partOfSpeech = await data
       .filter(
         (item) => item.meta.id.split(":")[0] === data[0].meta.id.split(":")[0]
