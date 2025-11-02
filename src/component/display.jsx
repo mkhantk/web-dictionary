@@ -9,7 +9,6 @@ function Display() {
       dictionary.sound
     }.mp3`
   );
-
   function handlePlay() {
     audio.play();
   }
@@ -54,7 +53,7 @@ function Display() {
       </div>
       <div className="flex flex-col gap-5 my-5">
         <h2 className="font-bold">Examples: </h2>
-        {dictionary.example.examples.map((item, index) => (
+        {dictionary.example && dictionary.example.examples.map((item, index) => (
           <blockquote
             key={index}
             className="p-2 text-gray-900/80 dark:text-gray-200/80"
@@ -63,7 +62,7 @@ function Display() {
           </blockquote>
         ))}
       </div>
-      {dictionary.synonyms[0].relationshipType === "synonym" && (
+      {dictionary.synonyms && dictionary.synonyms[0].relationshipType === "synonym" && (
         <div className="flex justify-start items-center flex-wrap gap-1 my-5 text-gray-900/80 dark:text-gray-200/80">
           <h2 className="text-gray-900 font-bold dark:text-gray-200">
             Related Words:{" "}
