@@ -162,7 +162,7 @@ function Header({ setLoading }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             onKeyDown={(e) => handleEnter(e)}
-            className="px-8  py-1 w-full rounded-full focus:outline-none bg-neutral-400/50"
+            className="px-8  py-1 w-full resize-none rounded-full focus:outline-none bg-neutral-400/50"
           ></textarea>
           {search && search.length > 1 && (
             <button
